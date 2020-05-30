@@ -1,0 +1,640 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Wish You Were Here: Context-Aware Human Generation</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="908260b4-382e-43f6-afc4-93e27632e029" class="page sans"><header><h1 class="page-title">Wish You Were Here: Context-Aware Human Generation</h1></header><div class="page-body"><p id="c40d2585-d094-4b91-ad06-f0af75cdfa3b" class=""><a href="https://arxiv.org/abs/2005.10663">https://arxiv.org/abs/2005.10663</a></p><p id="25caeb38-6599-4dff-b42b-3111f2d9bc02" class="">
+</p><figure id="3d05e93b-c576-43f4-b651-85e976d6f69f" class="image"><a href="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled.png"><img style="width:1280px" src="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled.png"/></a></figure><p id="b378bf71-0a68-4b4a-8839-232f0f6ebc28" class="">
+</p><p id="03354041-9b65-4782-8cfd-af91e5e45f56" class="">This pipeline allows you to harmoniously add a person to your photo. It consists of three parts: generation of a mask where a person should be inserted; transformation of the inserted person into a given pose; additional face correction. The complexity of the task is that it is necessary not to generate the whole picture, but to harmoniously fit into the already existing one. In contrast to deep fakes, there are more degrees of freedom here. Also this article has a cute title.</p><p id="a3d1c2e8-0242-4683-ae95-f7635b0785dc" class="">
+</p><p id="13832180-8ec5-47fc-bcd2-2c7efeaed951" class="">The input is the original picture with several people and the picture with the individual person to be added to the original picture. Also, optionally, a bundling box is provided, where to insert a person.</p><p id="a02ad358-2f0d-41c0-9f12-33427e88ccb2" class="">
+</p><p id="373b7547-f445-488d-b3e0-7ccd5ebcc55a" class="">The first model is Essence generation network (EGN) - by the input segmentation mask of the original picture it generates a mask for the person to be inserted. The first channel of the input tensor - segmentation of all people, different values are encoded different parts of the body/clothes, the second channel - segmentation of facial parts (binary), the third (optional) - target bundling box. Architecture - pix2pixHD with adversarial loss, feature matching loss by discriminator (but without VGG feature matching). Also regularization into gradients by input segmentation to reduce high-frequency patterns in the generated mask.</p><p id="2325077a-bd8f-44d2-843f-7e9d5985862c" class="">
+</p><figure id="b2159fe6-7e06-4452-8e23-140c653f0598" class="image"><a href="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%201.png"><img style="width:1280px" src="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%201.png"/></a></figure><p id="1a7e8ed7-02b4-41c1-83d2-8393c9a11146" class="">
+</p><figure id="4c8cc59a-e8e8-4ed8-a646-30355bf4c8fb" class="image"><a href="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%202.png"><img style="width:1280px" src="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%202.png"/></a></figure><p id="b01c5c2c-1f8e-4033-904c-57d7b05fb127" class="">Example of data for the first model</p><p id="cfdb351d-ebab-4bee-81c6-6f79e9e01dd3" class="">
+</p><p id="98630d35-ba1c-4e2d-b9fd-35c07dc92ad8" class="">The second model Multi-conditioning rendering network (MCRN) - generates a person in a given pose (512x512). Separate parts of the human (selected by another pre-trained segmentation model) concatenated by channels are fed to the encoder. Decoder - SPADE, in which the tensor from the encoder is fed, as well as the mask of the target position obtained from the previous network. At the output, there is a generated body Z and a new precise mask for it M. The final picture (with body glued) O is obtained after applying mask M to Z and gluing it into the original picture.</p><p id="ae00af54-ac09-4eb1-9266-5e1e8f5eee8f" class="">
+</p><p id="491fd7c6-8f76-408f-8d6a-1b0d005c2fe6" class="">Adversarial hinge loss, feature matching loss, and L1 between Z and target body X (but only on area B, which is an optional bundling box). The output mask is forced to be similar to the original pose mask by L1 loss (but it could be different). Also, the &quot;smoothness&quot; regulator is added on the mask. On the final image - VGG feature matching loss between target image.</p><p id="946bdfae-6906-4e90-bc12-68a92f4b6221" class="">
+</p><figure id="478571d4-8edc-494f-9016-7f5468b895f5" class="image"><a href="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%203.png"><img style="width:1280px" src="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%203.png"/></a></figure><p id="42b8c109-dabe-41ae-81b5-5681dcab4f39" class="">Third Face refinement network (FRN) - improves the face. Crop generated in the previous step of the face O is taken to the input, as well as an embedding (VGGFace2) of the original face of the person before the transformation. They concatenate VGG embedding to the bottleneck after the encoder. The output has an improved face and mask for blending with the original face. Loss - perceptual by the VGGFace model. Architecture has taken from their previous work, image from there.</p><p id="e58ccb87-8e69-4195-843b-8d51adb6da1c" class="">
+</p><figure id="68034f90-470f-49ba-8b22-93f9f99239ad" class="image"><a href="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%204.png"><img style="width:1280px" src="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%204.png"/></a></figure><p id="0aec0859-0510-4c9e-837f-08f2e93c84bf" class="">
+</p><p id="aead0747-9116-432e-925c-5d4577f865b6" class="">For the dataset, they use Multi-Human Parsing (DeepFashion is too artificial, plus they need a lot of people on one picture). For EGN model training, one person was randomly removed (to be predicted). Bundling box B was sampled at one level by height +-10%, and randomly across the entire width.</p><p id="cc524071-1225-47b2-8d64-98fe0a814e01" class="">
+</p><p id="3492edad-2e6b-42e9-99ce-1a5683c5d505" class="">MCRN was trained on each person from the train part of the dataset individually - it turns out they were trained on a person in the original position to predict him in the same position. But in order to model simply could not throw the information, they divided the parts of the person into separate channels and resized (so the part of a body completely occupied the channel on width and height), and the bottleneck is narrow enough (256).</p><p id="b29ce8ee-9643-4dea-9c40-f02a60459e1c" class="">
+</p><figure id="3148d618-de52-4ec8-9f50-e0cb28454463" class="image"><a href="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%205.png"><img style="width:1280px" src="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%205.png"/></a></figure><p id="825a62e7-3815-4d57-80e5-be6cfae12746" class="">
+</p><figure id="3b83771a-5ed0-437c-ac53-89737fb71a37" class="image"><a href="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%206.png"><img style="width:1280px" src="Wish%20You%20Were%20Here%20Context%20Aware%20Human%20Generation%203d05e93bc57643f4b65185e976d6f69f/Untitled%206.png"/></a></figure><p id="a2e16172-bdde-494c-b7c4-4549fae7536f" class="">My favorite picture from the article, looks really creepy and funny how a model tries to add a mask of a man to a picture.</p><p id="b6880507-794e-48ef-92ff-ad40dd763cd0" class="">
+</p><p id="2cff64c1-3e71-41c0-9bb2-bfac3d1693c2" class="">Many different experiments to show that their method works under different conditions, for example, they tried to draw the mask by hand and the second network still coped and generated the realistic bodies. The dressing also works (replacing several body parts from another person). They invented their own numerical metrics and also performed user-study. Also cool ablation study with different losses.</p><p id="214b403d-9f74-4f75-a76e-611db1385744" class="">
+</p><p id="73700d09-8ee8-4d2b-8788-0806b3ad40b9" class="">Another interesting point - when removing the masks of people from the dataset, they always took the person who is behind someone in the case of the crossing. As I understood, if it were the other way around, the model would be too easy to understand where to add a person (it would be visible cut out the contour on the remaining person).</p><p id="42fd2153-8daf-45a8-8ecb-bc2552f9f9e7" class="">
+</p><p id="0d1a56be-44a2-4e28-9348-79d78444f0d2" class="">They themselves mention disadvantages - now the generation of segmentation for a person doesn&#x27;t condition on the person, who should be generated. For example, the model does not know that we want to add a girl with long hair and therefore will not generate a hair mask.</p><p id="a2c46a34-bcc6-454d-9b40-18c48ea61c57" class="">
+</p><figure id="c701c7a1-0d11-48ac-a665-11400bc72a88"><div class="source"><a></a></div></figure></div></article></body></html>
