@@ -1,4 +1,8 @@
 # About
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
+My name is Evgeny Kashin, I am training neural networks in Yanex.
 
+Here are some links to my social network accounts:
+- [Linkedin](https://www.linkedin.com/in/evgeny-kashin)
+- [Twitter](https://twitter.com/digitman_)
+- [Facebook](https://www.facebook.com/kashin.evgeniy)
