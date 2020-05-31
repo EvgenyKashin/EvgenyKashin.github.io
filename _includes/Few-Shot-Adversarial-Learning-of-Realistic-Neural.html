@@ -1,0 +1,569 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><style>
+/* webkit printing magic: print all background colors */
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0fff80b5-30e9-4efd-b2aa-b2462ac4d2a2" class="page sans"><div class="page-body"><figure id="d1a4f9cd-08d2-45f7-8d8e-ad9eeaab58aa" class="image"><a href="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_10-00-57.png"><img style="width:2622px" src="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_10-00-57.png"/></a></figure><p id="fd467e46-ea35-4aa5-8dc3-1121f665c26e" class="">
+</p><p id="3833d289-64e6-4432-8e22-408cd8044381" class="">Paper from Moscow Samsung AI Center about heads animation from ICCV19. Basically, for the models that allow you to make high-quality animation of the face, you need to retrain the model for a specific person. The approach of the authors allows you to animate a new face from several photos. They use meta-learning(training on different people) and before the inference on a new person do fine-tuning.</p><p id="dc68098d-3e9f-4389-a381-5d4ae265cba9" class="">
+</p><p id="561bf0ca-06b4-44fb-9f69-36681fcfecaf" class="">An alternative to training a large model for each person may be to use warping of the original face (such as First Order Motion Model). This requires only one picture, but there are problems with new angles and hidden parts of the face. They also mention methods that use statistical modeling of the head, but there are problems with rendering everything near the face or hair. For their approach, they were inspired by the similar few-shot text2speech pipeline.</p><figure id="cc1c7609-624a-4784-b790-dd4f7a10f5e7" class="image"><a href="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_10-10-59.png"><img style="width:2680px" src="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_10-10-59.png"/></a></figure><p id="f3f20022-a715-49e0-83e4-5f695f49c619" class="">
+</p><p id="683d9ade-94a2-4c87-9d2e-180ff8ec1f81" class="">In the meta-learning phase they use M different videos (in each individual person), where for each X_t face there are landmarks turned into a schematic image of the Y_t face as in the diagram above. The pipeline consists of 3 models:</p><ul id="154f742c-fe1c-42f5-a873-08d1646151a1" class="bulleted-list"><li>Embedder - takes a pair(face and landmarks), gives out embedding, which should contain information about the person, but not about the specific pose of the face.</li></ul><ul id="984f4c06-a30f-4e24-91a5-5efcb1ed2ce3" class="bulleted-list"><li>Generator - takes a landmarks image and facial embedding (obtained on other images from the same video), produces a generated face corresponding to these landmarks. The embedding goes through the frozen MLP (this is an important point) and is fed to the generator through the AdaIN (only in the decoder part of the generator).</li></ul><ul id="80c4dcf0-821c-482c-8a6d-620575a903a9" class="bulleted-list"><li>Discriminator - takes the face, the corresponding landmarks, and the video index. At first, the convolution encoder outputs vectors of the same size as Embedder. Next is a scalar product of this vector and a row from matrix W corresponding to the index of the current video (projection discriminator idea). The output contains one number - realism score. The discriminator takes into account not only the correspondence of a face to landmarks but also the correspondence of a face to a specific person.</li></ul><p id="b64e819a-8cb7-4ca5-8b50-b390c5d55f96" class="">
+</p><p id="3ea3f57c-9301-44b4-a060-7907cfcc8253" class="">Actually, the realism score in the discriminator is a bit more complicated. There are also components that do not depend on the video index (w_0 and b). They are responsible for the overall realism of the face-landmarks.</p><figure id="c8c2d6d7-6d55-48ac-8375-fada8063781b" class="image"><a href="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_10-45-04.png"><img style="width:480px" src="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_10-45-04.png"/></a></figure><p id="122278a2-9179-4794-82bb-7d052dde4c90" class="">
+</p><p id="d0e3f3dd-6dd8-4686-98a6-a37a36b0114b" class="">
+</p><p id="355f7e2d-4ccd-4d03-99a8-15777cd75db9" class="">During the meta-learning part they sampled the video, from which they selected a frame to be reconstructed. They sampled 8 more frames, fed them to Embedder and averaged the embeddings. VoxCeleb1 dataset for comparison with baselines(1 FPS), VoxCeleb2 for final model(25 FPS). Minimized the following loses between generated and real face:</p><ul id="6e9b0233-903f-46c9-bcfd-43d5c143d941" class="bulleted-list"><li>content perceptual loss on VGG features</li></ul><ul id="7ab61ac0-3be9-452f-8583-29daecc587fa" class="bulleted-list"><li>adversarial hinge loss</li></ul><ul id="d8940641-2811-4b85-96cd-f6274f8eb87e" class="bulleted-list"><li>feature matching loss by discriminator</li></ul><ul id="d01a647f-a1e8-4db1-9364-c0654a88c344" class="bulleted-list"><li>the matching loss between Embedder embedding and vector in the discriminator (in table W) which is important for fine-tuning.</li></ul><p id="21ca1844-7a66-4f13-a227-54f86d75e150" class="">
+</p><p id="4c6b6484-5515-4fc1-9cd4-8ac412aa3603" class="">After meta-learning, you can already use the model by feeding a few photos of a new person into Embedder. But it is possible to improve the preservation of identity if you fine-tune it:</p><ul id="20f3909a-6733-4dd1-9cdf-9edb33567b0c" class="bulleted-list"><li>the new person&#x27;s embedding is fed via MLP to the generator, and if at the previous stage this MLP was frozen, now it is unfrozen and fine-tuned together with the whole generator.</li></ul><ul id="53f35bd0-11cd-4ca8-8697-f028eb411510" class="bulleted-list"><li>The discriminator is also needed for fine-tuning, but since there is no vector in the W matrix for a new person, it must be taken from somewhere. This is where the matching loss which made the Embedder e_i embedding value similar to the vectors in the discriminator W_i comes in place, so the embedding can replace the vector in the discriminator (w&#x27; = e_i + w_0).</li></ul><figure id="0c087245-bd6f-4411-ab62-d4444cc6fe8a" class="image"><a href="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_10-59-12.png"><img style="width:384px" src="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_10-59-12.png"/></a></figure><p id="9c548e5b-0343-489f-94b7-fb1f13a5c25b" class="">
+</p><p id="90908f1d-2572-46ca-9db7-0e03d56665fa" class="">During fine-tuning only content loss and adversarial loss are minimized. On the GPU it takes up to 5 minutes.</p><p id="2f01a759-4a61-4a2a-a926-e70fc9a549a5" class="">
+</p><p id="4d13f65d-7305-453b-b039-bb71d53a10aa" class="">For stability, they added spectral normalization and several self-attention blocks to the models.</p><p id="e26323a2-8b23-4e07-8988-1598327698b7" class="">
+</p><figure id="b5629b56-ebcf-4c7c-a839-dd8d1b1fc83b" class="image"><a href="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_11-18-02.png"><img style="width:384px" src="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_11-18-02.png"/></a></figure><p id="1680baa8-5465-4439-8d37-bd59bb415cb8" class="">
+</p><p id="3251fa33-6c28-4f46-b0a9-a2f51acb8ef2" class="">Compared with baselines too in a few-shot mode (1, 8, 32 frames for a new person). They also compared to their approach without matching loss and fine-tuning (without this loss the fine-tuning will not work) - FF(feed-forward). By numerical metrics, they lose to the baselines, but by user-study, they win, which is usually more important in principle.</p><p id="97664698-6cbc-41a4-ab7a-f53060b0a77f" class="">
+</p><figure id="402604c1-23ee-4fbf-a5b9-ad979c607b54" class="image"><a href="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_11-22-13.png"><img style="width:2418px" src="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_11-22-13.png"/></a></figure><p id="cc89af4e-2acb-4d9e-a480-87ce6477237d" class="">
+</p><p id="fbcd22f3-0077-48c0-9845-e8f8dbc3ed99" class="">The result of 0.33 of their best model of 32 photos per user-study - very cool, out of 3 photos with one generated user can not identify the real ones.</p><p id="f42e3ca8-4b2a-4b20-98a3-c967575914d9" class="">
+</p><figure id="a6dae6f0-f4cf-453f-b152-85e6a2622f98" class="image"><a href="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_11-23-11.png"><img style="width:2388px" src="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_11-23-11.png"/></a></figure><p id="7cd3c18a-7367-4902-8b12-6e9641920090" class="">
+</p><p id="6c38f399-9075-4cbd-b2a9-f229aef8474d" class="">The drawbacks of their method are that landmarks do not encode the gaze. Also when using landmarks from one person to another, it is immediately noticeable. From the person to himself all normal. It is necessary to have a landmark adaptation.</p><p id="8ccbffa8-8155-4eea-aaec-49fb78b6bac4" class=""> </p><figure id="aee6e118-dc09-4c8d-b6d6-eda9118ba816" class="image"><a href="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_11-27-25.png"><img style="width:432px" src="/images/Few%20Shot%20Adversarial%20Learning%20of%20Realistic%20Neural%20%20d1a4f9cd08d245f78d8ead9eeaab58aa/Screenshot_from_2020-05-31_11-27-25.png"/></a></figure></div></article></body></html>
