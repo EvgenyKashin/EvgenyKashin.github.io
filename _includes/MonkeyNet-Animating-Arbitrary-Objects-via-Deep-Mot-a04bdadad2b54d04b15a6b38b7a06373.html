@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><style>
+/* webkit printing magic: print all background colors */
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e8a66abb-a66f-43f8-b6b2-64c84ad3c154" class="page sans"><div class="page-body"><p id="135be478-fc39-492f-a56d-4cd1d4fb9a4f" class=""><a href="https://arxiv.org/abs/1812.08861">https://arxiv.org/abs/1812.08861</a></p><figure id="a04bdada-d2b5-4d04-b15a-6b38b7a06373" class="image"><a href="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_13-10-45.png"><img style="width:480px" src="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_13-10-45.png"/></a></figure><p id="df670134-7f86-40a2-938c-60313d6eda72" class="">
+</p><p id="264678c7-23e3-4487-8973-2c5746c0d91e" class="">The predecessor of the First Order Motion from the same author. It animates the object in the image based on another video. They learn their own keypoints, predict the optical flow from the source keypoints to target keypoints, and use it to generate a new image. The main idea is to separate Motion and Appearance. MonkeyNet because of MOviNg KEYpoints.</p><p id="7f5ed978-6f2b-4cac-b3ad-e97d16c162f4" class="">
+</p><p id="25d374d5-62c3-4888-befa-07f106f974e6" class="">Their pipeline consists of three networks Keypoint Detector, Dense Motion prediction, and Motion Transfer network. Everything learns end2end, only different videos without any labels are needed for training.</p><figure id="a174b841-7b6c-48c7-937c-b0f427f2bf3a" class="image"><a href="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_13-25-43.png"><img style="width:2672px" src="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_13-25-43.png"/></a></figure><p id="8660e353-e76d-4d6b-ba33-318f0009c553" class="">
+</p><p id="c6fcbae3-d939-4614-b046-35090c2fc0cd" class="">Keypoint Detector (∆) is a UNet (like all networks below), which predicts the heatmaps of the keypoints, each keypoint is a separate output channel with softmax (with temperature to sharpen the distribution). Next for each channel, they fit a Gaussian with its mean and covariance matrix and in the end they draw that Gaussian on each channel as a heatmap. This is necessary as a regularizer so that there is one keypoint per channel, and the covariance additionally gives the &quot;direction&quot; of the keypoint (for example, for the leg). Further, the difference between such tensors from the source and target images is mostly used.</p><p id="6119f6a7-af9a-409a-9c15-85e2e01427fd" class="">
+</p><p id="55970f01-c361-448f-912e-ea19d63f4702" class="">Dense Motion prediction (M) - they make the assumption that each keypoint found above is on a locally non-deformable (rigid) part of the object, so it must move in one piece. So for each keypoint they predict the mask of the part of the object belonging to the M_k keypoint. It also predicts a separate mask for the background (just another one). Next, the shift of respective keypoints (the uppermost tensor on the 3rd image) is calculated - for each of them they find the difference between it on target picture and it on the source picture - the difference exactly between the coordinates (Gaussian centers). The received vector of a direction for each keypoint is stretched (duplicate values) on all height and width of the initial image, multiplied by a predicted mask of the corresponding keypoint, and then aggregate results for all keypoints. This results in a coarse optical flow for the individual parts on one image. In addition to the masks, a residual flow is immediately predicted for the entire image, which models the shift for &quot;flexible&quot; objects. The resulting optical flow is simply the sum of coarse and residual.</p><figure id="68820f3a-2ef0-4bd1-827e-88e0437c790c" class="image"><a href="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_18-51-31.png"><img style="width:432px" src="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_18-51-31.png"/></a></figure><p id="f34f5144-4c40-4d57-817f-3f42a68492a1" class="">
+</p><p id="ed285efc-a1bd-45d5-a7ac-b5dd0254fb01" class="">The UNet input, which predicts the masks M for the keypoints and the residual flow, feeds the difference between the source keypoints&#x27; Gaussians and the target, as well as the source image. But the source image is fed in a tricky way. In order to better match the original image and the local area where the keypoint is moving on the target image, they duplicate the original image for each keypoint and move each according to the keypoint displacement vector (an upper tensor of image 3). All shifted images are concatenated channel-wise with the Gaussian differences. It turns out in different channels there will be different shifted pictures, which locally match with the corresponding keypoints in the target picture.</p><p id="0e535bf8-dfa6-4d0a-8984-784193937895" class="">
+</p><p id="9de93095-20fb-49db-879b-aa3ba8eadc66" class="">Motion Transfer network (G) - takes all that to generate a target from the source. This is UNet, but since it is not capable of generating large changes in geometry by default, so the authors used the optical flow. All encoder outputs (skip connections) are warped with the optical flow, before concatenation in the decoder. Also, the differences of Gaussian keypoints are additionally concatenated to each of such skip connections. This is necessary so that gradients can flow into Keypoint Detector directly, not through Dense Motion (because of end2end).</p><p id="7cfb5068-8bb9-452c-8f38-1af7116acb5d" class="">
+</p><p id="59d0dede-e50f-48d4-8ac3-b3e44c7f51c9" class="">The loss for the final, generated with G image, is LSGAN. The discriminator takes the concatenation of the generated (or real) image and the differences in Gaussian keypoints. The second loss is a feature matching by the discriminator (not VGG perceptual so it doesn&#x27;t rely on the domain).</p><p id="015d08b5-ee75-42a3-936a-84c6690b1935" class="">
+</p><p id="49cd09bc-c9d2-46d7-b377-982f8855dfec" class="">For inference, they map the absolute coordinates of the source object into relative coordinates with respect to the target coordinates. Therefore, the object must be on the first frame in the same position as the object in the reference video. This is a serious limitation, but the relativity of the coordinates solves the problems when the source keypoints and target keypoints are very different (for example, when the target person has big cheeks - picture 5, second column).</p><p id="90dc4a8f-c940-4a5f-af51-1686f2368813" class="">
+</p><figure id="91dcc71f-e0cb-4313-bd5d-fab23db73dbc" class="image"><a href="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-45-25.png"><img style="width:432px" src="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-45-25.png"/></a></figure><p id="bb617ba2-e3d1-460d-93c1-b5136529ab43" class="">
+</p><p id="c5a4b617-4bf6-48c9-aee6-15b49f211a2a" class="">They beat everybody on the metrics (by the time of 18th year):</p><figure id="82a5a999-17b3-431f-8152-07aab979336e" class="image"><a href="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-38-09.png"><img style="width:432px" src="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-38-09.png"/></a></figure><figure id="ea39ac7c-90f8-4685-8537-bd5620364358" class="image"><a href="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-37-59.png"><img style="width:384px" src="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-37-59.png"/></a></figure><figure id="3d432679-842e-4d7c-acf9-4bb28e711e2c" class="image"><a href="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-39-56.png"><img style="width:2860px" src="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-39-56.png"/></a></figure><p id="fa4d2983-dc6a-4554-aec1-ae4f9d70da93" class="">
+</p><p id="4d6d4cbe-8c13-405f-aea3-31fd549b33d6" class="">At the end of a cool ablation study, there are many other results, such as visualization of learned keypoints.</p><figure id="b67cf906-f69f-4bdc-9337-b55b4d8662f7" class="image"><a href="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-46-52.png"><img style="width:432px" src="/images/MonkeyNet%20Animating%20Arbitrary%20Objects%20via%20Deep%20Mot%20a04bdadad2b54d04b15a6b38b7a06373/Screenshot_from_2020-06-08_21-46-52.png"/></a></figure><p id="6c18f551-dcb7-47cb-a754-783001592d97" class="">
+</p></div></article></body></html>
