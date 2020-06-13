@@ -1,0 +1,591 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><style>
+/* webkit printing magic: print all background colors */
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e9c4dfaf-c971-4620-9907-3ba9198de6d0" class="page sans"><div class="page-body"><p id="27d06eb8-7daa-4f87-a7b4-fb83d80ff509" class=""><a href="https://arxiv.org/abs/2003.00196#:~:text=Image%20animation%20consists%20of%20generating,motion%20of%20a%20driving%20video.&amp;text=To%20achieve%20this%2C%20we%20decouple,using%20a%20self-supervised%20formulation">https://arxiv.org/abs/2003.0019</a>6</p><p id="3609315e-e196-413d-90e7-438cb3dc359b" class="">
+</p><figure id="125dd49e-a5f6-48b0-94e6-e39cadd16b76" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_13-42-17.png"><img style="width:528px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_13-42-17.png"/></a></figure><p id="188b553a-6065-464c-ad25-3bf9254b4c7d" class="">
+</p><p id="c6b193db-83de-4654-bb05-483a834c6109" class="">The improvement of the previous work of these authors - MonkeyNet. It allows you to animate an object in the image even better by the movements of another object. The disadvantage of MonkeyNet is that it didn&#x27;t work well with a large change of &quot;pose&quot;. Here Affine transformations to the local neighborhood of each keypoint are added. And also a prediction of the area to be inpainted is added. About MonkeyNet (which can help to understand this article) I wrote here <a href="https://evgenykashin.github.io/2020/06/09/MonkeyNet.html">https://evgenykashin.github.io/2020/06/09/MonkeyNet.html</a></p><p id="b66e6adf-6943-4e1a-bf90-e095a21488eb" class="">
+</p><p id="d39e119b-1475-4617-b0fb-e15a26bbd094" class="">
+</p><p id="c8d81ef7-c93a-4efd-86d2-ad74a9fe7d1f" class="">Task: having the original image of the object and the target, transform the original object into the target pose. The high-level architecture has not changed much also Keypoint Detector, Dense Motion prediction, and Generator. Everything trains end2end and only on the video set from one domain with no labels. The main changes in obtaining dense optical flow.</p><p id="0d373baf-e7ee-406d-9174-ffa0a0ff6078" class="">
+</p><figure id="89c18534-a367-4520-ad7e-eac07d5f310a" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_13-48-07.png"><img style="width:2354px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_13-48-07.png"/></a></figure><p id="368cdf4d-5140-407f-9f5f-e9c9bfb7bb95" class="">
+</p><p id="2d6f5158-5239-4566-92ad-83c989fde9e3" class="">Keypoint Detector also self-supervised learns the position of keypoints, but now only keypoints centers are taken from the predicted UNet heatmaps, without covariance matrices. But now this block also predicts the Affine (linear) transformation matrix (2x2 - rotations and stretches, no shift) for each keypoints (locally).</p><p id="c41bd2c2-3012-49f6-942b-91fca9dca269" class="">
+</p><p id="2bfb46ce-8f2d-4023-bc79-837acddbcf5f" class="">
+</p><p id="97a5df51-daf0-41ba-b3f0-a76c45acbb92" class="">The task of Dense Motion block remained the same - to predict dense optical flow by sparse keypoints(and now also by Jacobian matrices). To be more exact, the backward optical flow which for each pixel in target image D gives coordinates of the corresponding pixel in the original image S.</p><p id="517d21d8-9b4b-44ee-93d4-2716c1fee700" class=""> </p><figure id="95301c8f-5382-41c6-ab1a-befcdd0c08e4" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_14-18-11.png"><img style="width:288px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_14-18-11.png"/></a></figure><p id="699179ed-0664-49d2-b72b-0c4ac4e3cd9d" class="">
+</p><p id="3bcc7d05-9891-4210-a006-b6647da5f27f" class="">Backward optical flow, so it makes it possible to use differentiable F.grid_sample.</p><p id="4488ed39-665e-47cd-a613-5c882abc547f" class="">
+</p><p id="9705a1b1-7bd9-4593-854d-eff81aabd1d5" class="">
+</p><p id="37d39078-3ce6-45d6-8100-17575ad88dbd" class="">Back to Keypoint Detector. Besides keypoints for the source and target images, they now want to predict the Affine transformation for each keypoint. This makes it possible to simulate not only the shift of keypoints between source and target but also any rotations/stretches in the local neighborhood of the keypoint. They could probably predict one local transformation for each pair of source and target keypoints at a time, but they predict the transformation for the source and target keypoints separately. Sort of because the source and target images can be very different, and it better to predict independently for any image, without requesting the pair (as usually predicted in keypoints detection). But then it turns out for the source and target images 2 transformations are predicted, into some abstract frame R, which we will never see even. It&#x27;s really abstract. After that two transformations will have to be merged into one S &lt; - D.</p><p id="9ac7b0e0-336b-4c56-935a-be829b770254" class="">
+</p><p id="78455047-31e3-4323-a8c0-874a17d9d01b" class="">
+</p><p id="680610c3-5053-4821-a00b-d3e2831a089c" class="">How did they even come to local Affine transformations? It came from the idea of decomposing the backward optical flow into Taylor series in the neighborhood of a keypoint. When expanded in a series, we obtain a Jacobian matrix, since the initial function from 2d space to 2d space, the matrix has the size of 2x2, which in fact can be considered as a matrix of linear transformation (rotation, stretch, but without shift). In practice, a uniform 2d grid is obtained first (from -1 to 1 by x and y), shifted by the coordinates of the target&#x27;s keypoint, then a linear transformation is applied to each point of the grid, and the resulting flow is obtained by shifting by negative coordinates of the source&#x27;s keypoint. Thus, the first order due to the linear transform inside (2nd member of the Taylor series), if it is removed, we get zero order, which is essentially MonekyNet.</p><p id="b6093d3e-2b51-4849-93d3-a1d07aeb2e44" class="">
+</p><p id="491dbc3a-94cf-4501-88e7-dd3dbe163ac3" class="">
+</p><p id="1f436d6b-c105-4a5a-9254-07fb7d3e09fa" class="">Backward optical flow from D to S can be obtained by combining the optical flow of the source and target keypoint into an abstract frame R.</p><p id="4c43d72b-a075-477b-abb3-39b678e43ae9" class="">
+</p><figure id="c57b25a5-c676-4ceb-98f3-6bbac0277600" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_14-59-18.png"><img style="width:576px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_14-59-18.png"/></a></figure><p id="3321241c-1d23-488f-b76a-59cdc7eaa41e" class="">
+</p><p id="e1119db6-c351-40ce-9553-6d4c29156c6a" class="">Decomposing this function in Taylor series (details in appendix):</p><p id="35e35f91-8665-401a-8bad-04c63541ed8a" class="">
+</p><figure id="92fd3410-a2bf-4c52-9180-601544bac2c7" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_15-04-09.png"><img style="width:1354px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_15-04-09.png"/></a></figure><p id="ba479144-7dd3-4944-af49-d86d9928180e" class="">In the last formula, both multipliers (Jacobian matrices) are predicted by Keypoint Detector (4 numbers for each keypoint).</p><p id="77e10ad9-0313-46a6-9676-b66885f5b24f" class="">
+</p><p id="89460883-f89e-437c-a376-d427fc89033c" class="">
+</p><p id="08b0f2c8-39b6-4356-b99e-24fc85653e45" class="">After getting the above sparse motion representation, it is possible to go to the Dense Motion block. Like MonkeyNet there is a UNet, which predicts for each keypoint the mask of the part of the object for which the keypoint is responsible (the local area of transformation), as well as an additional mask for the background. These masks can be used to aggregate local optical flows from all the keypoints into a single optical flow (by multiplying the masks by the corresponding flow and adding them all). The input to this UNet is the difference between the keypoints of two images (as in MonkeyNet - each keypoint has its own channel with a Gaussian difference, only now without covariance). Also, the input is given the original image, but as in the previous work, in a tricky way. To better match the area of a keypoint in the original image with that area in the target image, they make a copy of the original image for each keypoint and apply the corresponding keypoint transformation to it. Then everything is connected channel-wise. In this UNet and the one that predicts keypoints authors decided to optimize and work with 4 times smaller images.</p><p id="1fed51a6-c40c-4aae-abae-c1658fcf8b3a" class="">
+</p><p id="8c1e3ece-cf15-4463-8c6a-f483ed5bfa69" class="">
+</p><p id="2a5b713f-8c90-402c-b182-1569ad95341b" class="">The last Generation module should generate the original picture in a new pose. It takes the original picture to input, downsample it through several convolutional layers. With the optical flow obtained above, the activation tensor (after the downsampling) is warped. UNet from Keypoint Detector, in addition to the keypoints&#x27; masks, also generates an occlusion map [0, 1]. It should show from which area the warped activations can be taken and in which areas it is necessary to create (inpaint). Essentially, the warped activations simply multiplied by this occlusion map. The result goes into several ResNet blocks, and then into a convolution upsampling.</p><p id="e05aa935-08c3-4511-9d63-652abaab844e" class="">
+</p><p id="39a8de4d-808e-44e0-b435-e31646724445" class="">
+</p><figure id="b22595ed-3da3-47a1-abd2-8fe739a5f214" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_20-55-37.png"><img style="width:2062px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_20-55-37.png"/></a></figure><p id="319b77ee-2765-4cb6-a6e4-7e50baaa7a8a" class="">
+</p><p id="d7263d36-3c46-48ed-a313-01d643bbeedf" class="">These are examples of occlusion maps. The dark part that can&#x27;t be warped from the original features and has to be generated.</p><p id="1740c08d-7f44-4f19-a38e-cd5e0f60cfe5" class="">
+</p><p id="5feea6f3-942f-4bbc-b5f5-7db1725753ae" class="">
+</p><p id="c6f8d7ee-8a2a-4509-8647-d4779babd0ce" class="">The main loss is the multiscale perceptual loss (pre-trained VGG19, but before that, it was a perceptual loss by the discriminator, it is not clear how much did it affect), also adversarial LSGAN loss. They also use Equivariance Constraint - a regularizer, which is usually used in works on unsupervised keypoint detection. It forces the prediction of keypoints in the same place before and after geometric augmentations (thinplate splines deformations) of the original image. This regularizer is applied to both predicted keypoints and the Jacobian matrices.</p><p id="e7f35fe5-6656-41f2-b4bb-84e4e72c6a27" class="">
+</p><p id="9f621ff0-3788-45d2-91c9-67ceae76e062" class="">
+</p><p id="d69166f7-9b93-4fbb-a4e7-1796f5efb2c6" class="">Like in MonkeyNet on the inference, they do not transfer the absolute movement, but the relative movement of the target object. During the train stage, there is no problem, because they train one person (different frames) on one video at a time. And at inference stage objects can be different sizes and in different parts of the image, so they transfer not the D_n position of the frame to S, but the difference of the position relative to the initial frame (roughly speaking) D_n - D_0. This means that the initial poses of the original object and the object that defines the movement must match. But it helps if the shape of the face/body of the source and moving person are not similar.</p><p id="c1cbcaed-4771-4e69-9892-dad8a58d8eb3" class="">
+</p><p id="70ec6964-cc5f-46df-95b6-d126d8948970" class="">
+</p><p id="0f22d3e9-4e28-453e-8504-89dc115c5fe3" class="">They tested on different datasets (faces, bodies, robots), beat up all competitors, especially when bending the bodies (local transformations are cool).</p><p id="86b30020-ca1b-4024-ac75-592398730fba" class="">
+</p><figure id="2b5ed40d-e9b7-4b42-a2ad-47a925dda6c1" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_20-47-27.png"><img style="width:2118px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_20-47-27.png"/></a></figure><p id="74311d79-d02b-4f0a-a2c3-58dd653a994c" class="">
+</p><p id="e56a0b85-6714-4d70-b830-36511e380843" class="">Good ablation study. For example, you can see that using local transformations without Equivariance Constraint is collapsing.</p><p id="386dc038-f04f-4a73-95ca-5f83cbabcfe8" class="">
+</p><figure id="fb3c8faf-9ec3-44be-accd-0a08ff2d3bf9" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_20-49-20.png"><img style="width:2100px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-12_20-49-20.png"/></a></figure><p id="6b1de3a8-5ba6-4622-b101-fca41f9df918" class="">
+</p><p id="77961263-210f-4b1a-bc96-0f8e6caed6f1" class="">More results of the transformations.</p><p id="cc32e46e-f5af-4a6d-a96b-d6035713ef24" class="">
+</p><figure id="8a1a24f4-84f7-417a-ba16-a73da1eb7e8a" class="image"><a href="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-13_13-00-53.png"><img style="width:1870px" src="/images/First%20Order%20Motion%20Model%20for%20Image%20Animation%20125dd49ea5f648b094e6e39cadd16b76/Screenshot_from_2020-06-13_13-00-53.png"/></a></figure><p id="21731c9f-27fc-4b0b-aecc-b78ed957c8e4" class="">
+</p></div></article></body></html>
