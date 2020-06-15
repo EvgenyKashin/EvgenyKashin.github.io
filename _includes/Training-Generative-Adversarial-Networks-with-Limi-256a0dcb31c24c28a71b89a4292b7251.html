@@ -1,0 +1,572 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><style>
+/* webkit printing magic: print all background colors */
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5ce93f6d-4825-4d2b-ae17-fff699a3c1af" class="page sans"><div class="page-body"><figure id="256a0dcb-31c2-4c28-a71b-89a4292b7251" class="image"><a href="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_12-50-41.png"><img style="width:2140px" src="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_12-50-41.png"/></a></figure><p id="f8342689-7e0e-492d-b094-6289f9072626" class="">
+</p><p id="fdc87824-42cd-4d4d-aaee-85defe5faa15" class=""><a href="https://arxiv.org/abs/2006.06676">https://arxiv.org/abs/2006.06676</a></p><p id="0fd2dda5-b727-4a9b-bd4b-e458215261e9" class="">
+</p><p id="c8530938-9a55-4606-9a2a-b0a4e91bab04" class="">Work by StyleGAN authors, allowing the use of GANs when there are little images. The main idea is a tricky use of differentiable augmentations, without modifying loses or architecture. Adding it to StyleGAN2 showed comparable results with an order of magnitude fewer images (several thousand).</p><p id="df02d79f-356c-4eff-854a-7030dedb84c3" class="">
+</p><p id="3783f191-f06c-4e0d-8033-cac215748b20" class="">The problem with the small dataset is that the discriminator quickly overfit. On a large dataset, this is not a problem (as authors of BigGAN said - the role of D to pass the signal, not generalize). You can see in the figure below how the data volume affects training (the smaller the data the worse the FID). Comparing (b) and (c) we can see that on a smaller volume, the distribution of D (discriminator) outputs very quickly stops intersecting for real and fake, and the distribution on validation data becomes close to fake - overfitting.</p><p id="4e7af4ca-9619-4b16-9ce0-788bc3466adc" class="">
+</p><figure id="03106ae5-2e3f-43ee-aa1e-6f96012165d2" class="image"><a href="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_10-39-06.png"><img style="width:2144px" src="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_10-39-06.png"/></a></figure><p id="0d4fa76a-abc1-4172-977d-03c621191df4" class="">
+</p><p id="22592a3e-c27d-4a3f-a76f-2cf4c3383c13" class="">Simple augmentations on the original dataset is not suitable for image generation, because then these augmentations &quot;leak&quot; and the generator starts to generate images with these augmentations. Proposed earlier <em>Consistency regularization</em>, the main idea of which is to bring closer the outputs D for augmented and non-augmented images, also leads to leaking augmentations. The discriminator becomes &quot;blind&quot; to augmentations and the generator exploits it.</p><p id="78c9f80a-0d88-478b-a61a-db13a22c983c" class="">
+</p><p id="55fe27a2-1862-47ac-871e-f4521f3985ff" class="">The authors suggest using augmentations before the discriminator always. For real and generated images. It turns out that <strong>D will never see real images</strong>. And the generator G should generate such samples, which after the augmentation will look like real images after the augmentation. You can see it well on 2(b):</p><p id="6bb21e3d-de0b-4a47-89c3-0257d0ed5ab5" class="">
+</p><figure id="f7c7e1b4-1954-4e75-91ab-6e5c33d8a776" class="image"><a href="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_10-51-36.png"><img style="width:2140px" src="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_10-51-36.png"/></a></figure><p id="679d9ef9-279e-42a7-a8c2-20e32e602942" class="">
+</p><p id="39127392-fed3-4089-8198-aefb0a95902a" class="">The most interesting thing is that not all augmentations are suitable, but only those that the generator can implicitly &quot;undo&quot;. They call them &quot;non-leaking&quot;. But this doesn&#x27;t mean that each individual augmentation has to be undoable, it&#x27;s more about probabilistic meaning. That is why the zeroing of 90% of the image is invertible (by applying it many times accidentally, you can guess what the original image was), and a random rotation by [0, 90, 180, 270] is not invertible (after the augmentation you can not guess the initial picture). But it becomes possible to use many different augmentations if you apply them with probability p &lt; 1. For example, the same random rotation applied with p=0.5 will produce a picture with 0 degrees rotation more often. So you can guess which picture was before the augmentation (again, in the probability sense, not from one picture).</p><p id="f556d6ee-8710-409d-8c06-f3e46b683059" class="">
+</p><p id="73a1b17f-0a9f-4bcc-95c0-3db32a2504bb" class="">They tried geometric (rotations, shifts) and color transformations, additive noise, cutout, image-space filtering. It is important that since augmentations are used after G and before D in training, <strong>they must be differentiable</strong>. Usually, the composition of non-leaking augmentations is also non-leaking. They apply the augmentations sequentially in one order, each with an equal probability of value p. Even with a small p the picture after augmentations will almost always be transformed, see 2(c). Therefore, in any case, the generator should try to make pictures as default as possible, without augmentation. Whether the augmentation is leaking or not also depends on the probability of p. Examples for individual augmentations (dependence on p).</p><p id="7eccd2c5-e0b3-4c16-9e21-fc39116aa54f" class="">
+</p><figure id="4cfa023e-ce2d-423e-8c4f-cd432bf4dc23" class="image"><a href="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_11-17-43.png"><img style="width:2160px" src="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_11-17-43.png"/></a></figure><p id="a6b8c41a-55fd-4095-99f2-4ba1dc0197c8" class="">
+</p><p id="72afd23f-74ed-4d12-b394-4f3e0c293eb5" class="">The only problem remaining is that for each dataset and amount of data, it would be necessary to find the best p. Therefore they suggested doing it adaptively, using a <strong>heuristic measure of the overfitting</strong>. Two variants of heuristic, the first uses a validation set (not very suitable), the second uses only outputs of D (proportion of positive outputs of D). 0 - not overfitting, 1 - overfitting.</p><figure id="75c1cc74-6e8e-437e-871a-6a694c81df05" class="image"><a href="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_11-32-56.png"><img style="width:1328px" src="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_11-32-56.png"/></a></figure><p id="a52837d5-1fcb-4400-bf77-556aa392cadb" class="">Every 4 batches they update the augmentation strength p according to the selected heuristic. If heuristic shows that strong overfitting, p is increased, and vice versa. They are called it adaptive discriminator augmentation (ADA).</p><p id="d32a9cc9-8d57-4c5a-8d65-2cdfc6e3be1a" class="">
+</p><figure id="e97b558f-0777-4507-b14d-5790b08bcf12" class="image"><a href="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_12-47-53.png"><img style="width:2132px" src="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_12-47-53.png"/></a></figure><p id="af20ea10-5eb3-4eeb-916c-be0b037b0be7" class="">We can see that compared to figure 1, the use of ADA reduces overfitting over time, and gradients in G become sharper.</p><p id="2007742c-ac74-4370-b1a0-a2b9ce944142" class="">
+</p><p id="4b6835b9-d8ec-4c09-bb58-d18311426a5c" class="">Metrics and visual results are better than those of baselines on different volumes of datasets. Their sample-efficiency allows using StyleGAN2 on new domains with only 1k images.</p><p id="6499387c-e239-4928-92cd-52fe8fb4cc1f" class="">
+</p><figure id="f7ec28f4-8bcf-41dc-a644-c19e4051bff9" class="image"><a href="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_12-54-16.png"><img style="width:2144px" src="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_12-54-16.png"/></a></figure><p id="2f00735e-7666-4dfd-89ef-757045885cc7" class="">
+</p><p id="d571bd57-8b39-4db3-9374-72a63df1f2aa" class="">It also showed that it is possible to use their method for transfer learning. It significantly speeds up the learning process and makes it possible to learn something at all. This is an example on their new dataset with portraits (the weights pretrained on FFHQ).</p><p id="56cc9a2f-9496-4735-af1c-fb15be223971" class="">
+</p><figure id="d8d0af8a-79e5-4271-8623-8d5ef46d9e28" class="image"><a href="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_12-57-29.png"><img style="width:1928px" src="/images/Training%20Generative%20Adversarial%20Networks%20with%20Limi%20256a0dcb31c24c28a71b89a4292b7251/Screenshot_from_2020-06-15_12-57-29.png"/></a></figure><p id="9d4419db-33a0-40c7-b2f2-4837b4fe37ea" class="">
+</p><p id="6a4c8a7d-1334-4b24-a6d7-d73e5ab4a3f1" class="">No code, but there is a pseudo code in paper for the augmentations used.</p><p id="83e1c17b-482c-4e9a-ad65-27987842a7d3" class="">
+</p></div></article></body></html>
