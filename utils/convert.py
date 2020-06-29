@@ -8,7 +8,7 @@ from zipfile import ZipFile
 import fire
 
 
-def main(f, out_dir="/home/evgenykashin/projects/EvgenyKashin.github.io/"):
+def main(f, out_dir="/home/evgeny/projects/EvgenyKashin.github.io/"):
     f = Path(f)
     out_dir = Path(out_dir)
 

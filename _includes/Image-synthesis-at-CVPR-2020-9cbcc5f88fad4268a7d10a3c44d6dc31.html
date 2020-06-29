@@ -1,0 +1,581 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><style>
+/* webkit printing magic: print all background colors */
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dafec35f-0895-47d1-8cd6-6a320dfe0838" class="page sans"><div class="page-body"><p id="40ee6663-5b6c-4566-906b-d4f242bfdb4a" class="">
+</p><p id="4f7cc6fb-8078-44e5-9a9c-b476a9178b57" class="">This year the conference was hosted in a virtual format. It greatly reduced the number of networking for me, but allowed paying attention to more papers. Regarding the drawbacks, I listed them separately here <a href="https://twitter.com/digitman_/status/1274612391523860480">https://twitter.com/digitman_/status/1274612391523860480</a> </p><p id="a45eff0c-8e67-4a04-851b-5a1680172a39" class="">
+</p><figure id="9cbcc5f8-8fad-4268-a7d1-0a3c44d6dc31" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Screenshot_from_2020-06-28_14-30-34.png"><img style="width:572px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Screenshot_from_2020-06-28_14-30-34.png"/></a></figure><p id="f3ced959-8ba1-430d-93bb-3c4c47de5842" class="">
+</p><p id="e691d6d4-90b9-4259-8a21-756a226c80cf" class="">During the conference, I took notes and decided to share them. No notes were taken on the papers that I had studied in great detail earlier. That is why articles like StyleGAN2 and StarGAN2 were not included in the list. For this post to be appropriate, it will only be about image generation (well, almost).</p><p id="4f0ea678-cd92-4487-a793-f8c5d77fb2da" class="">
+</p><p id="8f75e405-4780-4846-aa7e-8e561f5dd1a2" class=""><strong>Cross-Domain Correspondence Learning for Exemplar-Based Image Translation</strong></p><figure id="d6ec2781-54e3-4038-a1be-68084c778bc1" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled.png"/></a></figure><p id="3826a070-f7dc-47df-960b-d1e429aa67dd" class="">Generation of images by the segmentation mask using an example image. Style during generation is just taken from the example. In fact, it also allows you to edit arbitrary images, if there is a segmentation for them. Pipeline: by the picture of the segmentation map and picture example they extract features with different encoders into the same latent space. Then they look for how they warp in each other, warp the example, and then further improve with the generator, which takes warped features through AdaIN. Results <a href="https://youtu.be/RkHnQYn9gR0">https://youtu.be/RkHnQYn9gR0</a> </p><p id="e3365e89-e276-4f07-9eb3-309dd7cbea2f" class="">
+</p><p id="da47dfb5-593a-4587-b26f-dd05524584ea" class=""><strong>SEAN: Image Synthesis with Semantic Region-Adaptive Normalization</strong></p><p id="582e5a16-c7b9-4e00-a6c3-d96407e0da71" class="">Although SPADE generates a good picture by the segmentation mask, it is not enough for the authors. They add to SPADE a normalization block in addition to the segmentation map also information about style. And the style is encoded for each region of the image with a separate encoder. In this way you can make a style mixing by changing the styles of different parts of the face. Results <a href="https://youtu.be/0Vbj9xFgoUw">https://youtu.be/0Vbj9xFgoUw</a> </p><figure id="be867344-a8fc-4dc9-b834-f3e968cbd32c" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Screenshot_from_2020-06-29_13-19-23.png"><img style="width:947px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Screenshot_from_2020-06-29_13-19-23.png"/></a></figure><p id="63df5ea1-361c-4a4b-9cbc-8d66e5f6148c" class="">
+</p><p id="d5e06ff6-1e3a-42ad-b7cd-61d167c187cd" class=""><strong>SegAttnGAN: Text to Image Generation with Segmentation Attention</strong></p><figure id="bfe04674-95c9-4b11-8dba-5f5f658cbaf6" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%201.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%201.png"/></a></figure><p id="62405ce8-37c3-433e-b61e-8994cdbbc973" class="">AttnGAN improvement - a network that generates an image from the text (in a narrow domain). Text encoder takes features for sentences and separate words, and previously from it was just a multi-scale generator. Now a segmentation mask is generated from the same embedding using self attention. The mask is fed to the generator via SPADE blocks.</p><p id="81788aee-b613-4b85-b309-9796dc99f595" class="">
+</p><p id="0a5be983-1150-4c31-af18-cd8ee75ab5df" class=""><strong>FaR-GAN for One-Shot Face Reenactment</strong></p><figure id="cb216775-52d2-4d36-ab68-acb355f5e662" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%202.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%202.png"/></a></figure><p id="5c33c321-bdc3-4ac6-ba2a-8c7b17d9dea1" class="">Manipulation for faces by one photo. SPADE generator, starts with the bottleneck from the encoder (which takes the original photo), SPADE blocks take the view of a new &quot;face pose&quot;. Also, noise is added.</p><p id="e57303df-4425-4db8-9d30-1b3e1048ee37" class="">
+</p><p id="59d71b04-5c12-4392-a566-adc381279c49" class=""><strong>NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</strong></p><figure id="7fef9af4-36a9-4f63-89d2-666f0f82e23f" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%203.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%203.png"/></a></figure><p id="3312c49d-8356-4918-b78b-b6e9ae39fca8" class="">They fit for each scene a separate model (~30sec), which by coordinates in the scene and the direction generates a view, which then goes into the render. It takes a bunch of pictures of the scene. It is trained through differentiated rendering. This work allows you to generate video of the flights in the scene, change the lighting, etc. Results <a href="https://www.matthewtancik.com/nerf">https://www.matthewtancik.com/nerf</a> </p><p id="585db7aa-adad-44c8-a3b2-703f4110c417" class="">
+</p><p id="0e0be514-e12a-4122-96c6-bcb8a3b924df" class=""><strong>Learning to Simulate Dynamic Environments with GameGAN</strong></p><figure id="d459018d-2e9b-427e-a08d-39b86284b819" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%204.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%204.png"/></a></figure><p id="28d336db-0d2e-4ec2-9961-15d710893034" class="">Simulation of simple 2d games using the prediction of the next frame. World Model re-invention (which Schmidhuber made originally). Funny trick - you can change the background. Results <a href="https://youtu.be/4OzJUNsPx60">https://youtu.be/4OzJUNsPx60</a></p><p id="ce4c6476-12f1-449c-a67c-c00be96d81fb" class="">
+</p><p id="9dc4a6c3-a09f-496a-ac24-c4dfb3373fe4" class=""><strong>Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild</strong></p><figure id="903e4703-2e42-47ef-bcad-6b0c1e982604" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%205.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%205.png"/></a></figure><p id="9cb410ee-f813-4065-8534-f4b5f1529cec" class="">Winner of the &quot;best paper&quot;. Allows you to get a 3d model with one photo without any additional labels. But works only for symmetrical objects, what are the faces (well, almost). Predict by photo uncertainty maps, depth, texture, view point and light. Serve all in a differentiated rendering (17th year). Loss - restoration of the original photo. But it just did not work - not enough &quot;defined&quot; task. That&#x27;s why they used symmetry - they flip textures, confidential maps and shadows to make it works that way too. By the link, you can try with your photo <a href="http://www.robots.ox.ac.uk/~vgg/blog/unsupervised-learning-of-probably-symmetric-deformable-3d-objects-from-images-in-the-wild.html?image=004_face&amp;type=human">http://www.robots.ox.ac.uk/~vgg/blog/unsupervised-learning-of-probably-symmetric-deformable-3d-objects-from-images-in-the-wild.html</a></p><p id="abeb9fe6-6461-43a9-acbc-78641fd0cb5c" class="">
+</p><p id="ad65547a-02c8-4785-97a6-9c886041d05c" class=""><strong>Advancing High Fidelity Identity Swapping for Forgery Detection</strong></p><figure id="93d33c8a-1843-42f6-a760-a607965c07d6" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%206.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%206.png"/></a></figure><p id="2f9c3f35-4cfb-4626-8982-a029f4ebc7ae" class="">One shot face-swap, using SPADE to throw a facial geometry of a source, and AdaIN to throw a face identity of a target. The result is enhanced by a second model, which takes the result of the previous step and the difference between this result and the source - this allows to return missing parts or objects on the face. Results <a href="https://youtu.be/qNvpNuqfNZs">https://youtu.be/qNvpNuqfNZs</a> </p><p id="cc7773bc-4a1f-4426-8656-a44f8b2dfc28" class="">
+</p><p id="4f5d7d27-a362-4746-80cf-11c725376403" class=""><strong>Disentangled Image Generation Through Structured Noise Injection</strong></p><figure id="927a7d11-b5f2-4669-9a60-e0ddbb99f231" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%207.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%207.png"/></a></figure><p id="cbd37ba4-747b-4391-b3df-fdc2a0643b3c" class="">
+</p><p id="f8dadab4-3f72-433c-a209-068b7aad2610" class="">The authors like how StyleGAN can generate different faces, but don&#x27;t like that you can&#x27;t manipulate the local part of the image with latent code (which is global). So they suggest changing the default StyleGAN slightly. Instead of a 4x4x512 constant input tensor, a tensor is supplied which is divided into 4 logical parts through channels. The global code is one in the spatial part (1x1 is stretched to 4x4). Shared 2x2(stretched to 4x4), local 4x4. AdaIN in the generator also remains, each code is generated separately. This allows to change the local parts of the face without affecting the global ones. Results <a href="https://youtu.be/7h-7wso9E0k">https://youtu.be/7h-7wso9E0k</a></p><p id="cb468441-644c-47cf-b3fd-9d9158b1512b" class="">
+</p><p id="2ffafbd7-5ffd-4e01-8bc0-7137294b18e9" class=""><strong>Cascade EF-GAN: Progressive Facial Expression Editing With Local Focuses</strong></p><figure id="b4fde6ef-8e6e-4610-89f5-ffe4bd443106" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%208.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%208.png"/></a></figure><p id="924e1b85-4640-4017-a789-9ee1078c7b7f" class="">A net for changing facial expressions. Added 2 modifications to image2image. Individually change the eyes, nose, mouth locally, and then connect everything. Progressive editing - runs the result through the net several times.</p><p id="da7daaf1-20c6-46f7-b13d-bc90b8e8c261" class="">
+</p><p id="99c251f5-d142-454e-941d-a447eb268350" class=""><strong>PSGAN: Pose and Expression Robust Spatial-Aware GAN for Customizable Makeup Transfer</strong></p><figure id="91fd3055-eba6-4970-8f4d-5338839fdff7" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Screenshot_from_2020-06-29_13-38-23.png"><img style="width:1319px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Screenshot_from_2020-06-29_13-38-23.png"/></a></figure><p id="e9a30318-1d5b-42e5-be4a-dfe0e7798e5e" class="">Make-up transfer, solved the problems of previous approaches (they did not work if there is a big difference in pose or lighting) with the help of an attention. The attention between the source image&#x27;s bottleneck and the image reference&#x27;s bottleneck. Many losses were also used, in addition to the adversarial.</p><p id="d8b17327-728f-47ba-a4c0-d14b31916f68" class="">
+</p><p id="df754299-a27f-4ecd-b544-9b5e681a7632" class=""><strong>MixNMatch: Multifactor Disentanglement and Encoding for Conditional Image Generation</strong></p><figure id="ede10e16-586a-49d3-b683-c720f098db60" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%209.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%209.png"/></a></figure><p id="bbfe295c-51c6-49f2-be25-b37853cc1171" class="">Allows you to generate a picture in parts, dividing it into background, shape, texture and pose. There is a different encoder for each entity.</p><p id="880815b6-c138-4103-b2fb-3725d524a254" class="">
+</p><p id="faf72fbf-046d-4beb-a6a9-908f0934ddd8" class=""><strong>Learning to Shadow Hand-Drawn Sketches</strong></p><p id="3dccafb9-f948-4ff2-9abc-26c290f1bee8" class="">
+</p><figure id="5206023e-9bb4-4201-a7ff-2e67e258099e" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2010.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2010.png"/></a></figure><p id="02406a2b-cc4c-45e2-a25f-7e089d8e3e43" class="">Adding shadows to sketches. They collect a small dataset (1k) of sketch examples and shadows for them. They hard-coded 26 different positions of the light. Train image2image to predict the mask of the shadow.</p><p id="68d7d30b-90ec-46bd-9123-612e6e42a701" class="">
+</p><p id="cd1f8eb3-04b8-4c3f-93f6-f5692e90fded" class=""><strong>Reusing Discriminators for Encoding: Towards Unsupervised Image-to-Image Translation</strong></p><figure id="eadec63c-fc4d-4a9e-a168-100c2234da87" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2011.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2011.png"/></a></figure><p id="59033d8b-c60e-4e26-adef-44f60bf31fdb" class="">An improvement of image2image translation for unpaired data. It was suggested to reuse part of the encoder in the discriminator.</p><p id="282eb2ac-431e-4e26-bd8f-ae10a7db7f2b" class="">
+</p><p id="feb51269-3027-4a99-a251-96eda9b495b3" class=""><strong>Unpaired Portrait Drawing Generation via Asymmetric Cycle Mapping</strong></p><figure id="7e6d8022-9bc5-4b38-a325-4cab977f455e" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2012.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2012.png"/></a></figure><p id="990ad052-8145-4161-9504-4bb07e9b2f81" class="">Makes an unpaired image2image transfer of the face in the painted face. Fix the weaknesses of previous methods. The main feature is that the forward cycle consistency is not as strict as backward, which allows during the generation of a drawn face to do this for the generator more freely.</p><p id="fadc1375-64e0-4f7e-8bce-575157da8764" class="">
+</p><p id="10ea140e-7a2b-4f40-a0b3-59dd3550be16" class=""><strong>SketchyCOCO: Image Generation From Freehand Scene Sketches</strong></p><figure id="df83b7cc-3ada-41a6-b81f-4a474498629f" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2013.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2013.png"/></a></figure><p id="1fd46ac7-337a-4e07-b95f-9fb571772876" class="">There are works that turn segmentation, text, bounding boxes or even individual sketches into a picture. But there was no whole sketch by hand in the picture - now there is. They are generated in two phases - first the objects in the foreground (trying to maximize accuracy). Then the background - it can be generated more freely (not too much of a match with the input painted tree or cloud). Made their own dataset of pictures in the sketch: animals are replaced by the nearest similar in the dataset of painted animals, and the background is approximately. The results are pretty cool.</p><p id="300d79b6-8174-4b1f-9bbd-97692c6e1fd9" class="">
+</p><p id="7354de34-4b6a-4e5f-b076-a9fe662174e0" class=""><strong>BachGAN: High-Resolution Image Synthesis From Salient Object Layout</strong></p><figure id="7db451de-90af-4e52-8505-adc0d365fbe7" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2014.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2014.png"/></a></figure><p id="f7f44669-3773-4921-9286-54e815cd791e" class="">Now image2image is already quite well generated from image segmentation. But a complete semantic map is not always there, it is much easier to get the bundling boxes with labels. But it is more difficult to generate from such labels, so the authors offer to &quot;help&quot; the generator by adding to the generator info about similar backgrounds from the dataset with full segmentation labels.</p><p id="0f27b38e-7ce9-4007-97ff-57f08df4cc5b" class="">
+</p><p id="97059610-3b67-4718-8a27-141114a1b712" class=""><strong>Neural Rerendering in the Wild</strong></p><figure id="6c24ef8a-6b52-4d5d-9ff9-dc24d5a93645" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2015.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2015.png"/></a></figure><p id="02d650f4-2cbf-40ee-8c48-7b1d871ed083" class="">Last year&#x27;s work was on the tutorial this year. On a bunch of photos of attractions they receive a 3d point cloud by classical methods. Then they train image2image model to restore the original photo of the landmark by its presentation in the point cloud. You can get normal results, but blurred crowds of tourists, as well as different environmental conditions (weather, time of day). It is fixed with separate encoder for the appearance, which encodes the environmental conditions, and using semantic segmentation. On the inference you can fix the time of day and weather, as well as remove people. Results <a href="https://youtu.be/E1crWQn_kmY">https://youtu.be/E1crWQn_kmY</a> </p><p id="85af5381-91a7-4c58-9d43-2bbd2e86d32f" class="">
+</p><p id="7a9eae29-e39e-455e-af1c-39f7c8eb80a6" class=""><strong>Attentive Normalization for Conditional Image Generation</strong></p><figure id="1800be83-d0e1-463d-9e1c-a68d994a47eb" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2016.png"><img style="width:1280px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2016.png"/></a></figure><p id="cd27af2f-2acd-435c-80af-3bd0ac106c6b" class="">The attention in the GANs works pretty good. As originally shown in SA-GAN (Self-Attention GAN). But it&#x27;s a quadratic complexity in the spatial size of the feature map, the authors made their crutch to make the complexity linear. They also have an interpretation of what a semantic scene map should be learned inside it. The results and speed beat the baselines.</p><p id="5a6eee6c-5299-4c72-860f-6ac10117913d" class="">
+</p><p id="57381c9a-5b83-4928-9778-4a66e2b6b62f" class=""><strong>Freeze the Discriminator: a Simple Baseline for Fine-Tuning GANs</strong></p><p id="8874b0bb-68d9-4140-a77f-c7e64092da04" class="">
+</p><figure id="4954931e-3eb3-4ca8-99fe-eb13641b6e82" class="image"><a href="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2017.png"><img style="width:528px" src="/images/Image%20synthesis%20at%20CVPR%202020%209cbcc5f88fad4268a7d10a3c44d6dc31/Untitled%2017.png"/></a></figure><p id="0788a263-61fb-41be-a1a3-1548a8c27dcc" class="">Simple freezing of the first few layers of the discriminator is better than fine-tuning in its entirety.</p><p id="4930928f-0a52-488c-a56a-124ff33980b0" class="">
+</p></div></article></body></html>
