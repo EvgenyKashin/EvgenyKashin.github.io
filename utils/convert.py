@@ -8,14 +8,17 @@ from zipfile import ZipFile
 import fire
 
 
-def main(f, out_dir="/home/evgeny/projects/EvgenyKashin.github.io/"):
+def main(f, out_dir="/Users/evgeniikashin/projects/EvgenyKashin.github.io/"):
     f = Path(f)
     out_dir = Path(out_dir)
 
-    unzip_dir = f.parent / f.stem
+    if 'zip' in str(f):
+        unzip_dir = f.parent / f.stem
 
-    with ZipFile(f, "r") as zf:
-        zf.extractall(unzip_dir)
+        with ZipFile(f, "r") as zf:
+            zf.extractall(unzip_dir)
+    else:
+        unzip_dir = f
 
     for o in unzip_dir.iterdir():
         if o.is_file():

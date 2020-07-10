@@ -1,0 +1,567 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><style>
+/* webkit printing magic: print all background colors */
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c88305cc-329b-4f5d-a1dc-cc560195cddb" class="page sans"><div class="page-body"><p id="74fad6d0-2f2a-4421-bb9e-efd312f35d14" class=""><a href="https://arxiv.org/abs/2003.00696">https://arxiv.org/abs/2003.00696</a></p><figure id="1b787f7f-4991-43b5-95c5-6ded2365b464" class="image"><a href="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled.png"><img style="width:432px" src="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled.png"/></a></figure><p id="533880f9-b7e1-4aec-bcb7-b1502bdfed8c" class="">
+</p><p id="0d0322c8-a32d-4f96-ae79-fa5bcc97ec8a" class="">Work on conditional generation of bodies. To generate a person in a new pose, a global warping of features is used, and to clarify it a local attention is used. By gifs on the Github we can see that it works stably even for video, though it generates one frame each independently.</p><p id="e5cb6f4a-a35d-4822-ae16-72b510900b64" class="">
+</p><p id="94caa33f-dc4d-4bc2-8db5-c5947f579b83" class="">First of all, they discuss the applicability of CNN, when the source and target objects do not match in space - one of the solutions is to move-rotate features, such as in the Spatial Transformer Network. But for bodies it should not be done globally, but locally. For working with local parts in different areas of deep learning attention has proved to be a good. In this work, it is necessary to match the same parts of the object on different images.</p><p id="57f3ee00-d3e8-49e0-a50c-9f5a51343480" class="">
+</p><p id="f66aec17-41fb-4a24-9542-f5282b6361a4" class="">Their pipeline consists of two models Global Flow Field Estimator <em>F</em> and Local Neural Texture Renderer <em>G. F</em> generates an optical stream between the two images w and the mask m. w and m go to the local attention block of the G network, where the warping of the original features and the generation of a new image takes place.</p><p id="8b8dbf30-53b4-4dbf-9dfd-3d730484cc58" class="">
+</p><figure id="1d67dfea-b500-4b7f-a95b-a6e0552236e2" class="image"><a href="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%201.png"><img style="width:1041px" src="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%201.png"/></a></figure><p id="96036a0e-3d5f-4218-a185-431ab5e21f61" class="">
+</p><p id="755e177a-9918-4c84-bbc8-1dc974bbf8e5" class=""><em>F</em> takes the original picture, the original pose and the target pose, and at the output predicts the optical flow from the original image to the target and mask. The mask has values between 0 and 1 and indicates whether the original features can be used in the new position or whether it should be generated by context. The optical flow learns unsupervised and two regularizers put on it to make it fit. Sampling correctness loss - measures the similarity of the original VGG features and VGG of the target image. The second regularizer penalizes if in the local neighborhood the transformation is not similar to the Affine transformation (which is optimal in this area between the original and target image).</p><p id="06f8f2eb-e206-4203-99d4-d5375306a96f" class="">
+</p><p id="6d1056f2-8747-44c4-8976-8ac50e9b4bca" class="">The second <em>G</em> network generates a person in the target image position. It receives the source image, the target pose and the optical stream with the mask obtained above. For the source image, the encoder generates f_s features, while for the target position, a separate encoder generates f_t features.</p><figure id="ef14c3b4-f1df-4b99-aeaa-d7434ba0d4b6" class="image"><a href="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%202.png"><img style="width:1242px" src="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%202.png"/></a></figure><p id="8ba735c0-9308-47d9-b322-c108bc8fa818" class="">
+</p><p id="c0df1957-eb28-418e-bbe7-f6777d3addf0" class="">The source features f_s and target f_t are then fed into the Local Attention block. They move f_t in width and height and take local patches of nxn size (5x5 or 3x3) and corresponding patches in f_s. But to match objects on the source and target feature mapps, the patch from f_s is taken with an offset, which is an optical flow (because the coordinates may not be integer, it uses bilinear sampling). Two patches concatenate and feed into the kernel prediction network M with softmax at the end, which predicts the kernel for convolution - in fact, local attention for the patch size nxn. They apply a convolution with this kernel on the source patch from f_s with offset and average pull - so for each local patch. They get a new feature map f_attn. They also showed that gradients flow better through this pipeline than through simple warping without attention.</p><p id="5d6fac1e-968d-42c2-90b6-29dfa05c9e36" class="">
+</p><p id="33dcaf98-3100-487c-ad8d-d90a15eadaea" class="">But not for every point in the new position there is a match in the initial position, so some regions need to be generated from scratch. Which regions to generate is exactly what the mask m shows.</p><figure id="d469429c-5ac8-4cc6-b05c-72b32b6f92e7" class="image"><a href="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%203.png"><img style="width:288px" src="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%203.png"/></a></figure><p id="2b2d9ed5-adb2-4b48-9fec-8cd6c8ea90b7" class="">The decoder that generates the image is starting from f_out. Losses - l1, perceptual, style and adversarial are put between the generated image and the target.</p><p id="8888db08-5705-455c-b6a8-9bdb1d40d0cf" class="">
+</p><p id="5e8e71ea-d9bb-4796-846a-59ae1105b62e" class="">On the Market-1501 and DeepFashion datasets they better than baselines.</p><p id="d0982e52-960d-43fe-9f4e-05fa5624e216" class="">
+</p><figure id="9fd4d5bc-428f-49f3-8fe1-3933becfdfd7" class="image"><a href="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%204.png"><img style="width:528px" src="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%204.png"/></a></figure><p id="8feea032-7dd2-492b-893f-ed9017c3a6d3" class="">
+</p><p id="71919745-1527-42ef-b0c4-3cd00763d196" class="">On DeepFashion of 256x256 resolution they used two attention blocks, on 32x32 with n=3 and on 64x64 with n=5. At first they trained the Flow Field Estimator, and then continue end2end.</p><p id="a07cc2b4-5a99-40c2-8316-e06fdbe92f0e" class="">
+</p><p id="f8833e6c-9f53-4380-9f9b-b5464e486f76" class="">Works for other domains as well.</p><figure id="00052a14-29b3-4497-8f9d-13e1a81cb5a1" class="image"><a href="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%205.png"><img style="width:384px" src="/images/Deep%20Image%20Spatial%20Transformation%20for%20Person%20Image%201b787f7f499143b595c56ded2365b464/Untitled%205.png"/></a></figure><p id="37df13dd-5bd9-401d-83ce-f10b6d0b6edb" class="">
+</p></div></article></body></html>
